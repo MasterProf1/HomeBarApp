@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 2497b3757a91c414cae29a9864871a2a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - CocktailInfoHolder: {fileID: 5891291345202464986, guid: f9cad9ae93bb7f841a25c8625725565a, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

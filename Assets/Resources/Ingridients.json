@@ -1,0 +1,39 @@
+{
+  "ingridients": [
+    {
+      "ingredientName": "Amaretto",
+      "strenght": 25,
+      "inStock": 0
+    },
+    {
+      "ingredientName": "Bourbon",
+      "strenght": 40,
+      "inStock": 0
+    },
+    {
+      "ingredientName": "Milk",
+      "strenght": 0,
+      "inStock": 0
+    },
+    {
+      "ingredientName": "Milk",
+      "strenght": 0,
+      "inStock": 0
+    },
+    {
+      "ingredientName": "Icecream",
+      "strenght": 0,
+      "inStock": 0
+    },
+    {
+      "ingredientName": "Becherovka",
+      "strenght": 38,
+      "inStock": 0
+    },
+    {
+      "ingredientName": "Sprite",
+      "strenght": 0,
+      "inStock": 0
+    }
+  ]
+}
