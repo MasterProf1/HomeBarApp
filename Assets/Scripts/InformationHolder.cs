@@ -7,7 +7,7 @@ namespace MyBarApp
 {
     public class InformationHolder : MonoBehaviour
     {
-        public List<Ingridient> ingridients;
+        public List<Ingredient> ingridients;
         public List<Cocktail> cocktails;
         public void Initialize()
         {

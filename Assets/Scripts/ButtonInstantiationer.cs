@@ -12,7 +12,7 @@ namespace MyBarApp {
         [SerializeField] GameObject scrollContent;
         [SerializeField] GameObject buttonPrefab;
         GameObject button;
-        List<Ingridient> ingridients;
+        List<Ingredient> ingridients;
         List<Cocktail> cocktails;
         InputField InputField;      
         private void Start()
@@ -41,9 +41,9 @@ namespace MyBarApp {
             button = Instantiate(buttonPrefab);
             button.transform.SetParent(scrollContent.transform, false);            
             var texts = button.GetComponentsInChildren<Text>();
-            texts[0].text = cocktails[cocktailID].cocktailName;
-            texts[1].text = cocktails[cocktailID].totalCapacity.ToString();
-            texts[2].text = cocktails[cocktailID].strength.ToString();            
+            texts[0].text = cocktails[cocktailID].CocktailName;
+            texts[1].text = cocktails[cocktailID].TotalCapacity.ToString();
+            texts[2].text = cocktails[cocktailID].Strength.ToString();            
         }
 
         public void CreateIngredientsButtonsOnClick() 
@@ -54,13 +54,13 @@ namespace MyBarApp {
             }
         }
 
-        void CreateIngredientButton(List<Ingridient> ingridients, int ingredientID) 
+        void CreateIngredientButton(List<Ingredient> ingridients, int ingredientID) 
         {           
             button = Instantiate(buttonPrefab);
             button.transform.SetParent(scrollContent.transform, false);
-            button.GetComponentInChildren<Text>().text = ingridients[ingredientID].ingredientName;
+            button.GetComponentInChildren<Text>().text = ingridients[ingredientID].IngredientName;
             InputField = button.GetComponentInChildren<InputField>();
-            InputField.GetComponentInChildren<Text>().text = ingridients[ingredientID].inStock.ToString();
+            InputField.GetComponentInChildren<Text>().text = ingridients[ingredientID].InStock.ToString();
         }
        
     }

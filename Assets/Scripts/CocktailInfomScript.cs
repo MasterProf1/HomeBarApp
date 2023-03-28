@@ -9,7 +9,7 @@ namespace MyBarApp {
     {
         [SerializeField] GameObject CocktailInfoHolder;
 
-        List<Ingridient> ingridients;
+        List<Ingredient> ingridients;
         List<Cocktail> cocktails;
         Cocktail cocktail;
         GameObject cocktailPanel;
@@ -27,14 +27,14 @@ namespace MyBarApp {
             string cocktailNameButton = gameObject.GetComponentInChildren<Text>().text;
             cocktail = CocktailSearcher.GetCocktailByName(cocktails, cocktailNameButton);            
             var textsInHolder = cocktailPanel.GetComponentInChildren<Image>().GetComponentsInChildren<Text>();
-            textsInHolder[0].text = cocktail.cocktailName;
+            textsInHolder[0].text = cocktail.CocktailName;
             string cocktailIngridients = "\nIngridients:\n";
             for (int i = 0; i < cocktail.ingridients.Count; i++) 
             {
-                cocktailIngridients += $"{cocktail.ingridients[i].ingredientName} {cocktail.amountOfIngridient[i]}ml\n";
+                cocktailIngridients += $"{cocktail.ingridients[i].IngredientName} {cocktail.amountOfIngridient[i]}ml\n";
             }
-            textsInHolder[1].text = $"Volume: {cocktail.totalCapacity}\nStrenght: {cocktail.strength}\nGlassware: {cocktail.glassware}\n" +
-                $"Making method: {cocktail.makingMethod}\n" + cocktailIngridients;
+            textsInHolder[1].text = $"Volume: {cocktail.TotalCapacity}\nStrenght: {cocktail.Strength}\nGlassware: {cocktail.Glassware}\n" +
+                $"Making method: {cocktail.MakingMethod}\n" + cocktailIngridients;
         }
     }
 }

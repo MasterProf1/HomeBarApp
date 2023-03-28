@@ -7,12 +7,12 @@ namespace MyBarApp
 {
     public class ExampleScript : MonoBehaviour
     {
-        List<Ingridient> testIngridients = new List<Ingridient>();
+        List<Ingredient> testIngridients = new List<Ingredient>();
         // Start is called before the first frame update
         void Start()
         {            
-            testIngridients = DataReader.ParseIngridientsFromFileJSON(Constants.ingridientsDataFilePathJson);
-            print(testIngridients.Count);
+           testIngridients = DataReader.ParseIngridientsFromFileJSON(Constants.ingridientsDataFilePathJson);
+           print(testIngridients.Count);
         }
 
         public void PrintIngredients() 
@@ -20,7 +20,7 @@ namespace MyBarApp
 
             for (int i = 0; i < testIngridients.Count; i++) 
             {
-                print($"Name: {testIngridients[i].ingredientName} Strength: {testIngridients[i].strength}");
+                print($"Name: {testIngridients[i].IngredientName} Strength: {testIngridients[i].Strength}");
             }
         }
 

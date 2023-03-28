@@ -14,7 +14,7 @@ namespace MyBarApp
         [SerializeField] GameObject InfoHolder;
         private InformationHolder Info = new InformationHolder();
         List<string> listOfLinesOfIngridientsData;
-        List<Ingridient> ingridients;
+        List<Ingredient> ingridients;
         //string path = Constants.ingridientsDataFilePath;
         string path;
         int ingredientID;
@@ -32,13 +32,13 @@ namespace MyBarApp
 
         public void ChangeIngredientAmountInstock(string newInStock)//, out List<string> listOfLinesOfIngridientsData)
         {
-            Ingridient ingridient;
+            Ingredient ingridient;
             string ingredientName = gameObject.GetComponentInChildren<Text>().text;
             string[] linesOfIngridientsData = File.ReadAllLines(path);
             listOfLinesOfIngridientsData = linesOfIngridientsData.ToList();
             ingridient = DataReader.GetIngridientByName(ingredientName, ingridients, out ingredientID);
-            ingridient.inStock = int.Parse(newInStock);            
-            listOfLinesOfIngridientsData[ingredientID] = $"{ingridient.ingredientName} {ingridient.strength} {ingridient.inStock}";            
+            ingridient.InStock = int.Parse(newInStock);            
+            listOfLinesOfIngridientsData[ingredientID] = $"{ingridient.IngredientName} {ingridient.Strength} {ingridient.InStock}";            
         }
 
         public void AcceptInStockChanges() 

@@ -11,30 +11,30 @@ namespace MyBarApp
 {
     internal static class DataAppender
     {
-        public static void AddNewCocktail (string nameOfCocktail,string method, string glassware, List<Ingridient> ingridients, List<int> amountOfIngridients)
+        public static void AddNewCocktail (string nameOfCocktail,string method, string glassware, List<Ingredient> ingridients, List<int> amountOfIngridients)
             {            
             Cocktail cocktailToAppend = new Cocktail();
             if (nameOfCocktail != null) 
             {
-            cocktailToAppend.cocktailName = nameOfCocktail;
+            cocktailToAppend.CocktailName = nameOfCocktail;
             }
             if (method != null) 
             {
-            cocktailToAppend.makingMethod = method;
+            cocktailToAppend.MakingMethod = method;
             }
             if (glassware != null) 
             {
-            cocktailToAppend.glassware = glassware;
+            cocktailToAppend.Glassware = glassware;
             }
 
             for (int i = 0; i < ingridients.Count; i++) 
             {
                 cocktailToAppend.AddIngridient(ingridients[i], amountOfIngridients[i]);
             }
-            string textForAppend = "\n" + cocktailToAppend.cocktailName + " " + cocktailToAppend.makingMethod + " " + cocktailToAppend.glassware;
+            string textForAppend = "\n" + cocktailToAppend.CocktailName + " " + cocktailToAppend.MakingMethod + " " + cocktailToAppend.Glassware;
             for (int i = 0; i < cocktailToAppend.ingridients.Count; i++)
             {
-                textForAppend += " " + cocktailToAppend.ingridients[i].ingredientName + " " + cocktailToAppend.amountOfIngridient[i];
+                textForAppend += " " + cocktailToAppend.ingridients[i].IngredientName + " " + cocktailToAppend.amountOfIngridient[i];
             }
             
             File.AppendAllText(Constants.cocktailDataFilePath, textForAppend);
@@ -44,14 +44,14 @@ namespace MyBarApp
 
         public static void AddNewIngridient(string ingridientName, float strenght = 0, int inStock = 0) 
         {
-        Ingridient ingridient = new Ingridient();            
+        Ingredient ingridient = new Ingredient();            
             if (ingridient != null) 
             {
-            ingridient.ingredientName = ingridientName;
+            ingridient.IngredientName = ingridientName;
             }    
-            ingridient.strength = strenght;
-            ingridient.inStock = inStock;
-            string textForAppend = $"\n{ingridient.ingredientName} {ingridient.strength} {ingridient.inStock}";
+            ingridient.Strength = strenght;
+            ingridient.InStock = inStock;
+            string textForAppend = $"\n{ingridient.IngredientName} {ingridient.Strength} {ingridient.InStock}";
             
             File.AppendAllText(Constants.ingridientsDataFilePath, textForAppend);
         }

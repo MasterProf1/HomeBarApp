@@ -9,23 +9,23 @@ using UnityEngine;
 
 namespace MyBarApp.Models
 {
-    public class Ingridient
+    public class Ingredient
     {
-        public string ingredientName;
-        public float strength;
-        public int inStock;
+        public string IngredientName { get; set; }
+        public float Strength { get; set; }
+        public int InStock { get; set; }
 
-        public Ingridient() 
+        public Ingredient() 
         {
-            ingredientName = "UnknownIngridient";
-            strength = 0;
-            inStock = 0;
+            IngredientName = "UnknownIngridient";
+            Strength = 0;
+            InStock = 0;
         }
-        public Ingridient(string name, float str, int inStock = 0) 
+        public Ingredient(string name, float str, int inStock = 0) 
         {
-            ingredientName = name;
-            strength = str;
-            this.inStock = inStock;
+            IngredientName = name;
+            Strength = str;
+            this.InStock = inStock;
         }      
     }
 }

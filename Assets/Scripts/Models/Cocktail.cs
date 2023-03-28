@@ -6,30 +6,33 @@ namespace MyBarApp.Models
 {
     public class Cocktail
     {
-       public string cocktailName;
-       public string makingMethod;
-       public string glassware;
-       public int totalCapacity;
-       public float strength;       
+       public string CocktailName { get; set; }
+       public string MakingMethod { get; set; }
+       public string Glassware { get; set; }
+        // can't be set 
+       public int TotalCapacity { get; set; }
+        // can't be set 
+        public float Strength { get; set; }
 
-       public readonly List<Ingridient> ingridients = new List<Ingridient>();
+       public readonly List<Ingredient> ingridients = new List<Ingredient>();
        public readonly List<int> amountOfIngridient = new List<int>();
+       public List<string> IngredientsName = new List<string>();
 
         public Cocktail()
         {
-            cocktailName = "Unnamed Cocktail";
-            makingMethod = "Unknown method";
-            glassware = "Unknown glassware";
+            CocktailName = "Unnamed Cocktail";
+            MakingMethod = "Unknown method";
+            Glassware = "Unknown glassware";
         }
 
         public Cocktail(string name, string method, string glassware)
         {
-            cocktailName = name;
-            makingMethod = method;
-            this.glassware = glassware;
+            CocktailName = name;
+            MakingMethod = method;
+            this.Glassware = glassware;
         }
 
-        public void AddIngridient(Ingridient ingridientName, int amountOfIngridient) 
+        public void AddIngridient(Ingredient ingridientName, int amountOfIngridient) 
         {
             ingridients.Add(ingridientName);
             this.amountOfIngridient.Add(amountOfIngridient);
@@ -39,15 +42,15 @@ namespace MyBarApp.Models
         {
             if (ingridients != null) 
             {
-                totalCapacity = amountOfIngridient.Sum();
+                TotalCapacity = amountOfIngridient.Sum();
                 float spirit;
                 float totalSpirit = 0;
                 for (int i = 0; i < ingridients.Count; i++)
                 {
-                    spirit = (amountOfIngridient[i] * ingridients[i].strength) / 100;
+                    spirit = (amountOfIngridient[i] * ingridients[i].Strength) / 100;
                     totalSpirit += spirit;
                 }
-                strength = (100 * totalSpirit) / totalCapacity;
+                Strength = (100 * totalSpirit) / TotalCapacity;
             }                       
         }
     }

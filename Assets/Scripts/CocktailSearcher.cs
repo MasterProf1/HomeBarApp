@@ -9,7 +9,7 @@ namespace MyBarApp
 {
     internal static class CocktailSearcher
     {
-        public static List<Cocktail> GetListOfAvailableCocktails (List<Ingridient> availableIngredients, List<Cocktail> cocktails )
+        public static List<Cocktail> GetListOfAvailableCocktails (List<Ingredient> availableIngredients, List<Cocktail> cocktails )
             {
             int ingridientCounter = 0;
             // If List of available ingridients is Empty show massege: "You should mark ingridient or buy some"
@@ -37,7 +37,7 @@ namespace MyBarApp
             Cocktail cocktail = new Cocktail();
             for (int i = 0; i < cocktails.Count; i++) 
             {
-                if (cocktails[i].cocktailName == cocktailName) 
+                if (cocktails[i].CocktailName == cocktailName) 
                     cocktail = cocktails[i];
             }
             return cocktail;
